@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+
+public class EspacioPublico {
+
+
+
+
+		
+		private String direccion;
+		private String tipo;
+		private String localidad;
+	
+		
+//--------------------direccion--------------------------------	
+		public String getdireccion()
+		{
+			return direccion;
+		}
+		
+		public void  setdireccion(String direccion1)
+		{
+			direccion = direccion1;
+		}
+
+
+//--------------------tipo--------------------------------
+
+		public String gettipo()
+		{
+			return tipo;
+		}
+		
+		public void  settipo(String tipo1)
+		{
+			tipo=tipo1;
+		}
+
+
+//---------------------localidad-------------------------------
+
+		public String getlocalidad()
+		{
+			return localidad;
+		}
+		
+		public void  setlocalidad(String localidad1)
+		{
+	 		localidad = localidad1;
+		}
+
+
+
+
+
+	
+
+	
+}
