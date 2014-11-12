@@ -135,7 +135,7 @@ public class Elecciones {
 
 //-----------------------------------------partidos---------------------------------------------
 
-/*	
+	
 //------------------------ingresar datos del partido elegido
 String nombrep,lider, ideologia;		
 int cant_militantes, previas_elecciones;
@@ -163,7 +163,7 @@ System.out.print("\nIngresa el nombre del partido: ");
 		partido.setPrevias_elecciones(previas_elecciones);
 
 
-*/
+
 
 
 
@@ -196,28 +196,28 @@ System.out.print("\n-------------partidos------------------\n");
 			{
 				aList.add(salida);
 				salida = bf.readLine();
-				ArrayList <String> sep = new ArrayList <String>(Arrays.asList(salida.split(",")));
-					
- 						   System.out.println(" nombre partido:\n"+sep.get(0));
-						   System.out.println(" afiliados:\n"+sep.get(1));
-						
-
+			
 			}
 				
 		//con lo siguiente podremos ver los valores que hayamos dado a cada posicion del arraylist		
 			System.out.println("Estos son los partidos que hay disponibles");
 
-					
-				
+			for(int r=0;r<aList.size();r++)
+			{		
+				String parte=aList.get(r);
 				 //System.out.println(" -->"+aList.get(r));
-				
+				ArrayList <String> sep = new ArrayList <String>(Arrays.asList(parte.split(",")));
 				/*Partido part = new Partido();
 				part.setNombre();
 				part.setSiglas();*/
 
-   					
+   					for(int q=0;q<sep.size();q++)
+						{
+ 						   System.out.println(" -->\n"+sep.get(q));
+						}
+
 							
-			
+			}
 		}
 		 catch (FileNotFoundException e) 
 		{

@@ -1,0 +1,12 @@
+public class Part
+{
+
+    public Producto(String s, String i)
+    {
+        nombre = s;
+        cantidad = i;
+    }
+
+    String nombre;
+    String cantidad;
+}

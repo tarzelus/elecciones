@@ -20,7 +20,7 @@ public class Elecciones {
 		//comprueba que el DNI inglresado tiene el numero de caracteres que tiene que tener un DNI
 		do{
 	
-		System.out.print("\ningresa el numero del DNI con letra: ");
+		System.out.print("\ningresa el numero del DNI con letra (8 numeros y 1 letra): ");
 		DNI = sc.next();
 		habitante.setDni(DNI);
 		} while (DNI.length() >9 || DNI.length() < 9);
@@ -135,53 +135,7 @@ public class Elecciones {
 
 //-----------------------------------------partidos---------------------------------------------
 
-		
-//lectura del fichero listadosPartidos.txt y guardarlos en un arraylist para imprimirlos
-
-
-System.out.print("\n-------------partidos------------------\n");	
-
-
-		String nombrefichero = "listadosPartidos.txt";
-		String ruta ="/home/zubiri/Proyectosjava/elecciones/src";
-	
-
-		String salida;
-		int i = 0;
-
-		try 
-		{	
-		//lectura del fichero	
-			File archivo = new File(ruta, nombrefichero);
-			FileReader leer = new FileReader (archivo);
-			BufferedReader bf = new BufferedReader(leer);
-			ArrayList <String> aList = new ArrayList <String>();
-			salida = bf.readLine();
-
-		//meter los datos del txt en el arraylist mientras que la linea no este vacia ira leyendo de linea en linea
-
-			while (salida != null) 
-			{
-				aList.add(salida);
-				salida = bf.readLine();
-			}
-				
-		//con lo siguiente podremos ver los valores que hayamos dado a cada posicion del arraylist		
-			System.out.println("Estos son los partidos que hay disponibles");
-
-			for(int r=0;r<aList.size();r++)
-			{
-   				 System.out.println(" -->"+aList.get(r));
-			}
-		}
-		 catch (FileNotFoundException e) 
-		{
-           		 System.out.println(e.getMessage());
-        	}	
-
-
-
-
+/*	
 //------------------------ingresar datos del partido elegido
 String nombrep,lider, ideologia;		
 int cant_militantes, previas_elecciones;
@@ -207,6 +161,73 @@ System.out.print("\nIngresa el nombre del partido: ");
 		System.out.print("\nIngresa el resultado en las previas elecciones del partido: ");
 		previas_elecciones = sc.nextInt();
 		partido.setPrevias_elecciones(previas_elecciones);
+
+
+*/
+
+
+
+	
+//lectura del fichero listadosPartidos.txt y guardarlos en un arraylist para imprimirlos
+
+
+System.out.print("\n-------------partidos------------------\n");	
+
+
+		String nombrefichero = "listadosPartidos.txt";
+		String ruta ="/home/zubiri/Proyectosjava/elecciones/src";
+	
+
+		String salida;
+		int i = 0;
+
+		try 
+		{	
+		//lectura del fichero	
+			File archivo = new File(ruta, nombrefichero);
+			FileReader leer = new FileReader (archivo);
+			BufferedReader bf = new BufferedReader(leer);
+			ArrayList <String> aList = new ArrayList <String>();
+			salida = bf.readLine();
+
+		//meter los datos del txt en el arraylist mientras que la linea no este vacia ira leyendo de linea en linea
+
+			
+			do{
+				aList.add(salida);
+				salida = bf.readLine();
+				ArrayList <String> sep = new ArrayList <String>(Arrays.asList(salida.split(",")));
+					
+ 						   System.out.println(" nombre partido:\n"+sep.get(0));
+						   System.out.println(" afiliados:\n"+sep.get(1));
+						
+
+			}while (salida != null) ;
+				
+		//con lo siguiente podremos ver los valores que hayamos dado a cada posicion del arraylist		
+			System.out.println("Estos son los partidos que hay disponibles");
+
+					
+				
+				 //System.out.println(" -->"+aList.get(r));
+				
+				/*Partido part = new Partido();
+				part.setNombre();
+				part.setSiglas();*/
+
+   					
+							
+			
+		}
+		 catch (FileNotFoundException e) 
+		{
+           		 System.out.println(e.getMessage());
+        	}	
+
+
+
+
+
 
 
 
@@ -240,12 +261,12 @@ System.out.print("\nIngresa el nombre del partido: ");
 			System.out.println("\nLa direccion del espacio publico: " + espaciopublico.getDireccion());
 
 
-		System.out.print("\n-------------Estos son los datos los partidos------------------");	
+		/*System.out.print("\n-------------Estos son los datos los partidos------------------");	
 			System.out.println("\nEste es el nombre del partido: " + inmueble.getDireccion());
 			System.out.println("\nLider del partido: " + inmueble.getProvincia());
 			System.out.println("\nIdeologia del partido: " + inmueble.getLocalidad());
 			System.out.println("\nCantidad de militantes: " + inmueble.getCod_postal());
-			System.out.println("\nResultados de las previas elecciones: " + inmueble.getFecha_construc());
+			System.out.println("\nResultados de las previas elecciones: " + inmueble.getFecha_construc());*/
 
 
 
