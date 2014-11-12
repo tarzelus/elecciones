@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.*;
-
 import java.io.*;
+
 
 
 public class Elecciones {
@@ -135,39 +135,7 @@ public class Elecciones {
 
 //-----------------------------------------partidos---------------------------------------------
 
-/*	
-//------------------------ingresar datos del partido elegido
-String nombrep,lider, ideologia;		
-int cant_militantes, previas_elecciones;
 
-Partido partido = new Partido();
-
-System.out.print("\nIngresa el nombre del partido: ");
-		nombrep = sc.next();
-		partido.setNombre(nombrep);
-
-		System.out.print("\nIngresa el nombre del lider del partido: ");
-		lider = sc.next();
-		partido.setLider(lider);
-
-		System.out.print("\nIngresa la ideologia del partido: ");
-		ideologia = sc.next();
-		partido.setIdeologia(ideologia);
-
-		System.out.print("\nIngresa la cantidad de militantes que tiene el partido: ");
-		cant_militantes = sc.nextInt();
-		partido.setCant_militantes(cant_militantes);
-
-		System.out.print("\nIngresa el resultado en las previas elecciones del partido: ");
-		previas_elecciones = sc.nextInt();
-		partido.setPrevias_elecciones(previas_elecciones);
-
-
-*/
-
-
-
-	
 //lectura del fichero listadosPartidos.txt y guardarlos en un arraylist para imprimirlos
 
 
@@ -187,33 +155,39 @@ System.out.print("\n-------------partidos------------------\n");
 			File archivo = new File(ruta, nombrefichero);
 			FileReader leer = new FileReader (archivo);
 			BufferedReader bf = new BufferedReader(leer);
-			ArrayList <String> aList = new ArrayList <String>();
-			salida = bf.readLine();
+			
+						
 
-		//meter los datos del txt en el arraylist mientras que la linea no este vacia ira leyendo de linea en linea
+			int num = 0;
 
 			
 			do{
-				aList.add(salida);
+				// se le da valor a la variable de salida de tipo string de la linea que lee
 				salida = bf.readLine();
+				//conversion del valor del string salida a array 
 				ArrayList <String> sep = new ArrayList <String>(Arrays.asList(salida.split(",")));
 					
- 						   System.out.println(" nombre partido:\n"+sep.get(0));
-						   System.out.println(" afiliados:\n"+sep.get(1));
-						
+							
+				Partido part = new Partido();
+				part.setNombre(sep.get(0));
+				part.setLider(sep.get(1));
+				part.setIdeologia(sep.get(2));
+				part.setCant_militantes(Integer.parseInt(sep.get(3)));
+				part.setPrevias_elecciones(Integer.parseInt(sep.get(4)));
+			num = num + 1;
+
+			System.out.print("\n---------------partido "+num +"------------------");	
+			System.out.println("\nEste es el nombre del partido: " + part.getNombre());
+			System.out.println("\nLider del partido: " + part.getLider());
+			System.out.println("\nIdeologia del partido: " + part.getIdeologia());
+			System.out.println("\nCantidad de milistantes: " + part.getCant_militantes());
+			System.out.println("\nPrevias elecciones: " + part.getPrevias_elecciones());
+			
 
 			}while (salida != null) ;
 				
-		//con lo siguiente podremos ver los valores que hayamos dado a cada posicion del arraylist		
-			System.out.println("Estos son los partidos que hay disponibles");
-
 					
 				
-				 //System.out.println(" -->"+aList.get(r));
-				
-				/*Partido part = new Partido();
-				part.setNombre();
-				part.setSiglas();*/
 
    					
 							
@@ -223,13 +197,6 @@ System.out.print("\n-------------partidos------------------\n");
 		{
            		 System.out.println(e.getMessage());
         	}	
-
-
-
-
-
-
-
 
 
 
@@ -260,14 +227,9 @@ System.out.print("\n-------------partidos------------------\n");
 			System.out.println("\nLocalidad del espacio publico: " + espaciopublico.getLocalidad());
 			System.out.println("\nLa direccion del espacio publico: " + espaciopublico.getDireccion());
 
-
-		/*System.out.print("\n-------------Estos son los datos los partidos------------------");	
-			System.out.println("\nEste es el nombre del partido: " + inmueble.getDireccion());
-			System.out.println("\nLider del partido: " + inmueble.getProvincia());
-			System.out.println("\nIdeologia del partido: " + inmueble.getLocalidad());
-			System.out.println("\nCantidad de militantes: " + inmueble.getCod_postal());
-			System.out.println("\nResultados de las previas elecciones: " + inmueble.getFecha_construc());*/
-
+	
+	
+			
 
 
 

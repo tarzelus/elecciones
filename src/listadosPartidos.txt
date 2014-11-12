@@ -1,5 +1,5 @@
-pp,22
-psoe,22 
-podemos,30 
-bildu ,66	
-pnv,55
+pp,mariano,derecha,22,51
+psoe,odei,izquierda,12,30
+podemos,jeje,izquierda,13,66
+bildu,wee,te,22,63
+pnv,wwww,at,66,66
